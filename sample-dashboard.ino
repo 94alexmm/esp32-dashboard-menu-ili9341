@@ -3,8 +3,7 @@
   By 94alexmm
 */
 
-#include "SPI.h"
-#include "Adafruit_GFX.h"
+//#include "Grid.h"
 #include "Adafruit_ILI9341.h"
 #include <Keypad.h>
 
@@ -29,6 +28,7 @@ uint8_t colPins[COLS] = { 26, 27, 21 };
 uint8_t rowPins[ROWS] = { 12, 13, 14, 22 }; // Pins connected to R1, R2, R3, R4
 
 Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
+//Grid grid = Grid(tft);
 
 void setup() {
 
@@ -176,12 +176,6 @@ void updateGridValue(int position, String newValue) {
   tft.setTextSize(5);
   tft.setCursor(startX + 10, startY + 30);
   tft.println(newValue);
-}
-
-int64_t xx_time_get_time() {
-  struct timeval tv;
-  gettimeofday(&tv, NULL);
-  return (tv.tv_sec * 1000LL + (tv.tv_usec / 1000LL));
 }
 
 void loop() {
