@@ -1,5 +1,6 @@
 /*
   Simple ILI9341 Menu and dashboard using the generic 4x3 membrane keypad
+  By 94alexmm
 */
 
 #include "SPI.h"
